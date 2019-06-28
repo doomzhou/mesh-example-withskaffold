@@ -1,0 +1,9 @@
+apiVersion: skaffold/v1beta11
+kind: Config
+build:
+  artifacts:
+  - image: registry-vpc.cn-beijing.aliyuncs.com/pythonic/mesh-ex
+deploy:
+  kubectl:
+    manifests:
+      - mesh-*

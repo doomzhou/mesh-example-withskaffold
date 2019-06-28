@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  labels:
+    app: mesh-ex1
+  name: mesh-ex1
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8060
+  selector:
+    app: mesh-ex1
+  sessionAffinity: None
+  type: ClusterIP

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mesh-ex1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mesh-ex1
+  template:
+    metadata:
+      labels:
+        app: mesh-ex1
+    spec:
+      containers:
+      - name: mesh-ex1
+        image: registry-vpc.cn-beijing.aliyuncs.com/pythonic/mesh-ex
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8060
